@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="array" id="array">
+    <button id="onclick" value="add" onclick="add(event)">Add Fare</button>
+    <p id="data"></p>
+   
+    <script>
+        let array = [];
+        let odd = 1;
+        let even = 0;
+         function add(){
+            const  fare = parseFloat(document.getElementById('array').value);
+            if(fare % 2 == 0){
+                array[even] = fare;
+                even = even + 2;
+            }else{
+                array[odd] = fare;
+                odd = odd +  2;
+            }
+            document.getElementById('data').innerHTML = ` Flight fare is : ${array}`
+            }
+        
+    </script>
+</body>
+
+</html>
